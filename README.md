@@ -7,6 +7,7 @@ A full-featured desktop e-commerce application built entirely in Java as part of
 - Akash Dhimal
 - Bickey Rai
 - Prayash Bhattarai
+- Ishwor Shrestha
 
 ## 🚀 Features
 - Product listing with search and filter
