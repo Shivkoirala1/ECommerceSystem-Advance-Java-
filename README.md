@@ -4,7 +4,7 @@ A full-featured desktop e-commerce application built entirely in Java as part of
 
 ## 👥 Group Members
 - Damaru Ballav Koirala
-- AkashDhimal
+- Akash Dhimal
 - Bickey Rai
 - Prayash Bhattarai
 - Ishwor Shrestha
