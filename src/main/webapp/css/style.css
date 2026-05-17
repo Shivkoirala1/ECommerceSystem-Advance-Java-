@@ -235,6 +235,7 @@ tbody td { padding: 11px 14px; font-size: .92rem; }
     font-size: 1.4rem; cursor: pointer; color: var(--muted);
 }
 
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
     .navbar { padding: 0 16px; }
