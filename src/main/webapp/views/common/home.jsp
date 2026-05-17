@@ -430,3 +430,57 @@
             <div class="prod-name">earpods pro</div>
             <div class="prod-price">Rs 28,800</div>
             <div class="prod-old">Rs 35,500</div>
+            <span class="prod-discount">-20% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/jersey.jpg"
+                 alt="T-Shirt"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Nepal Cricket Jersey</div>
+            <div class="prod-price">Rs 799</div>
+            <div class="prod-old">Rs 999</div>
+            <span class="prod-discount">-25% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/running"
+                 alt="Running Shoes"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Running Shoes</div>
+            <div class="prod-price">Rs 2,500</div>
+            <div class="prod-old">Rs 3,200</div>
+            <span class="prod-discount">-22% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/backpack"
+                 alt="Backpack"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Backpack</div>
+            <div class="prod-price">Rs 1,800</div>
+            <div class="prod-old">Rs 2,500</div>
+            <span class="prod-discount">-28% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/chocolate.jpg"
+                 alt="chocolate"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Dark Chocolate</div>
+            <div class="prod-price">Rs 180</div>
+            <div class="prod-old">Rs 250</div>
+            <span class="prod-discount">-25% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/sonata.jpg"
+                 alt="Sonata Watch"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Sonata Watch</div>
+            <div class="prod-price">Rs 1,300</div>
+            <div class="prod-old">Rs 2,000</div>
+            <span class="prod-discount">-20% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/Toygun.jpg"
+                 alt="Toy Gun"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Gun</div>
+            <div class="prod-price">Rs 1,000</div>
+            <div class="prod-old">Rs 1,500</div>
