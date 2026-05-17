@@ -100,3 +100,92 @@
     </div>
 </div>
 
+<script>
+    // Real-time validation that keeps all values
+    const fullName = document.getElementById('fullName');
+    const username = document.getElementById('username');
+    const email    = document.getElementById('email');
+    const phone    = document.getElementById('phone');
+    const password = document.getElementById('password');
+    const confirm  = document.getElementById('confirmPassword');
+
+    function setMsg(id, msg, isOk) {
+        const el = document.getElementById(id);
+        el.textContent = msg;
+        el.className = 'field-msg ' + (isOk ? 'ok' : 'err');
+    }
+
+    fullName.addEventListener('input', function() {
+        if (/^[a-zA-Z\s]{2,}$/.test(this.value.trim())) {
+            this.className = 'input-ok';
+            setMsg('nameMsg', '✓ Looks good', true);
+        } else {
+            this.className = 'input-err';
+            setMsg('nameMsg', 'Only letters and spaces allowed', false);
+        }
+    });
+
+    username.addEventListener('input', function() {
+        if (/^[a-zA-Z0-9_]{4,20}$/.test(this.value.trim())) {
+            this.className = 'input-ok';
+            setMsg('userMsg', '✓ Valid username', true);
+        } else {
+            this.className = 'input-err';
+            setMsg('userMsg', '4-20 chars, letters/numbers/underscore only', false);
+        }
+    });
+
+    email.addEventListener('input', function() {
+        if (/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(this.value.trim())) {
+            this.className = 'input-ok';
+            setMsg('emailMsg', '✓ Valid email', true);
+        } else {
+            this.className = 'input-err';
+            setMsg('emailMsg', 'Enter a valid email address', false);
+        }
+    });
+
+    phone.addEventListener('input', function() {
+        if (/^[0-9]{10}$/.test(this.value.trim())) {
+            this.className = 'input-ok';
+            setMsg('phoneMsg', '✓ Valid phone', true);
+        } else {
+            this.className = 'input-err';
+            setMsg('phoneMsg', 'Must be exactly 10 digits', false);
+        }
+    });
+
+    password.addEventListener('input', function() {
+        const v = this.value;
+        let score = 0;
+        if (v.length >= 6) score++;
+        if (/[A-Z]/.test(v)) score++;
+        if (/[0-9]/.test(v)) score++;
+        if (/[^a-zA-Z0-9]/.test(v)) score++;
+
+        const fill = document.getElementById('strengthFill');
+        const text = document.getElementById('strengthText');
+        const colors = ['#ef4444','#f59e0b','#22c55e','#15803d'];
+        const labels = ['Weak','Fair','Strong','Very Strong'];
+        fill.style.width = (score * 25) + '%';
+        fill.style.background = colors[score - 1] || '#e2e8f0';
+        text.textContent = score > 0 ? labels[score - 1] : 'Enter a password';
+
+        checkConfirm();
+    });
+
+    confirm.addEventListener('input', checkConfirm);
+
+    function checkConfirm() {
+        if (confirm.value === '') return;
+        if (confirm.value === password.value) {
+            confirm.className = 'input-ok';
+            setMsg('confirmMsg', '✓ Passwords match', true);
+        } else {
+            confirm.className = 'input-err';
+            setMsg('confirmMsg', 'Passwords do not match', false);
+        }
+    }
+</script>
+</body>
+</html>
