@@ -40,11 +40,13 @@ public class ProductDAO {
     }
 
     public List<Product> search(String keyword) throws SQLException {
-        String sql = "SELECT * FROM products WHERE name LIKE ? OR category LIKE ? ORDER BY id DESC";
+        String sql = "SELECT * FROM products WHERE name LIKE ? OR category LIKE ? OR description LIKE ? ORDER BY id DESC";
         try (Connection c = DBConnection.getActiveConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
-            ps.setString(1, "%" + keyword + "%");
-            ps.setString(2, "%" + keyword + "%");
+            String k = "%" + keyword + "%";
+            ps.setString(1, k);
+            ps.setString(2, k);
+            ps.setString(3, k);
             try (ResultSet rs = ps.executeQuery()) {
                 List<Product> list = new ArrayList<>();
                 while (rs.next()) list.add(map(rs));
@@ -66,7 +68,7 @@ public class ProductDAO {
     }
 
     public Product add(Product p) throws SQLException {
-        String sql = "INSERT INTO products (name, description, price, stock, category) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO products (name, description, price, stock, category, image_url) VALUES (?,?,?,?,?,?)";
         try (Connection c = DBConnection.getActiveConnection();
              PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, p.getName());
@@ -74,6 +76,7 @@ public class ProductDAO {
             ps.setBigDecimal(3, p.getPrice());
             ps.setInt(4, p.getStock());
             ps.setString(5, p.getCategory());
+            ps.setString(6, p.getImageUrl());
             ps.executeUpdate();
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) p.setId(rs.getLong(1));
@@ -83,7 +86,7 @@ public class ProductDAO {
     }
 
     public boolean update(Product p) throws SQLException {
-        String sql = "UPDATE products SET name=?, description=?, price=?, stock=?, category=? WHERE id=?";
+        String sql = "UPDATE products SET name=?, description=?, price=?, stock=?, category=?, image_url=? WHERE id=?";
         try (Connection c = DBConnection.getActiveConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setString(1, p.getName());
@@ -91,7 +94,8 @@ public class ProductDAO {
             ps.setBigDecimal(3, p.getPrice());
             ps.setInt(4, p.getStock());
             ps.setString(5, p.getCategory());
-            ps.setLong(6, p.getId());
+            ps.setString(6, p.getImageUrl());
+            ps.setLong(7, p.getId());
             return ps.executeUpdate() > 0;
         }
     }
@@ -113,6 +117,7 @@ public class ProductDAO {
         p.setPrice(rs.getBigDecimal("price"));
         p.setStock(rs.getInt("stock"));
         p.setCategory(rs.getString("category"));
+        p.setImageUrl(rs.getString("image_url"));
         return p;
     }
 }
