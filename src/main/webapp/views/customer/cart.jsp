@@ -85,4 +85,82 @@
 <div class="cart-wrap">
     <div class="cart-header">
         <h2>🛒 My Cart</h2>
+    </div>
 
+    <c:if test="${not empty param.error}"><div class="alert alert-error">❌ ${param.error}</div></c:if>
+
+    <c:choose>
+        <c:when test="${empty cartItems}">
+            <div class="empty-cart">
+                <div class="e-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Looks like you haven't added anything yet.</p>
+                <a href="${pageContext.request.contextPath}/customer/products"
+                   style="background:#ff6b00;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:800;">
+                    Start Shopping
+                </a>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="cart-grid">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <c:forEach var="item" items="${cartItems}">
+                        <div class="cart-item">
+                            <div class="cart-item-img">
+                                <c:choose>
+                                    <c:when test="${not empty item.product.imageUrl}">
+                                        <img src="${pageContext.request.contextPath}/${item.product.imageUrl}"
+                                             alt="${item.product.name}"
+                                             onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                                        <span class="cart-item-emoji" style="display:none;">${item.product.categoryEmoji}</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="cart-item-emoji">${item.product.categoryEmoji}</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">${item.product.name}</div>
+                                <div class="cart-item-cat">${item.product.category}</div>
+                                <div class="cart-item-qty">Quantity: ${item.quantity}</div>
+                                <div class="cart-item-price">Rs ${item.product.price} each</div>
+                                <div class="cart-item-total">Subtotal: Rs ${item.lineTotal}</div>
+                            </div>
+                            <div class="cart-item-remove">
+                                <form method="post" action="${pageContext.request.contextPath}/cart">
+                                    <input type="hidden" name="action" value="remove">
+                                    <input type="hidden" name="itemId" value="${item.id}">
+                                    <button type="submit" class="btn-remove">🗑️ Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row"><span>${cartItems.size()} item(s)</span><span>Rs ${cartTotal}</span></div>
+                    <div class="summary-row"><span>Delivery</span><span style="color:#22c55e;">Free</span></div>
+                    <div class="summary-row total"><span>Total</span><span>Rs ${cartTotal}</span></div>
+
+                    <a href="${pageContext.request.contextPath}/order/checkout" class="btn-checkout">
+                        Proceed to Checkout →
+                    </a>
+                    <form method="post" action="${pageContext.request.contextPath}/cart">
+                        <input type="hidden" name="action" value="clear">
+                        <button type="submit" class="btn-clear" onclick="return confirm('Clear entire cart?')">
+                            🗑️ Clear Cart
+                        </button>
+                    </form>
+                    <a href="${pageContext.request.contextPath}/customer/products" class="btn-continue">
+                        ← Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </c:otherwise>
+    </c:choose>
+</div>
+</body>
+</html>
