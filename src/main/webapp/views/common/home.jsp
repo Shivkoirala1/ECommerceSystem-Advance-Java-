@@ -111,3 +111,74 @@
         .hero-badge .big { font-size: 2.4rem; line-height: 1; }
 
         /* Categories */
+        .section { padding: 36px 40px; }
+        .section-title {
+            font-size: 1.3rem; font-weight: 800;
+            color: #1e293b; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-title::after {
+            content: ''; flex: 1;
+            height: 2px; background: #e2e8f0;
+        }
+        .cat-grid {
+            display: flex; gap: 16px; flex-wrap: wrap;
+        }
+        .cat-card {
+            background: #fff; border-radius: 12px;
+            padding: 20px 24px; text-align: center;
+            flex: 1; min-width: 120px; max-width: 160px;
+            box-shadow: 0 1px 6px rgba(0,0,0,.07);
+            text-decoration: none; color: #1e293b;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .cat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,.12);
+        }
+        .cat-card .cat-icon { font-size: 2.2rem; margin-bottom: 8px; }
+        .cat-card .cat-name { font-weight: 700; font-size: .95rem; }
+
+        /* Flash sale */
+        .flash-header {
+            display: flex; align-items: center;
+            justify-content: space-between; margin-bottom: 20px;
+        }
+        .flash-title {
+            font-size: 1.3rem; font-weight: 800;
+            color: #1e293b; display: flex;
+            align-items: center; gap: 10px;
+        }
+        .flash-badge {
+            background: #ef4444; color: #fff;
+            padding: 3px 12px; border-radius: 20px;
+            font-size: .8rem; font-weight: 700;
+        }
+        .view-all {
+            color: #ff6b00; font-weight: 600;
+            text-decoration: none; font-size: .9rem;
+        }
+        .view-all:hover { text-decoration: underline; }
+
+        /* Product cards */
+        .prod-grid {
+            display: flex; gap: 16px; flex-wrap: wrap;
+        }
+        .prod-card {
+            background: #fff; border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(0,0,0,.07);
+            flex: 1; min-width: 160px; max-width: 200px;
+            padding: 16px; transition: transform .2s;
+            text-decoration: none; color: #1e293b;
+        }
+        .prod-card:hover { transform: translateY(-3px); }
+        .prod-card .prod-icon {
+            font-size: 3rem; text-align: center;
+            margin-bottom: 10px; display: block;
+        }
+        .prod-card .prod-name {
+            font-weight: 700; font-size: .9rem;
+            margin-bottom: 4px;
+        }
+        .prod-card .prod-price {
+            color: #ff6b00; font-weight: 800;
