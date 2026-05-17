@@ -76,3 +76,35 @@
                         <span class="badge badge-${o.status.toLowerCase()}">${o.status}</span>
                     </div>
                     <div class="order-card-body">
+                        <c:forEach var="item" items="${o.items}">
+                            <div class="order-item">
+                                <div class="order-item-img">
+                                    <c:choose>
+                                        <c:when test="${not empty item.product.imageUrl}">
+                                            <img src="${pageContext.request.contextPath}/${item.product.imageUrl}"
+                                                 alt="${item.product.name}"
+                                                 onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                                            <span class="order-item-emoji" style="display:none;">📦</span>
+                                        </c:when>
+                                        <c:otherwise><span class="order-item-emoji">📦</span></c:otherwise>
+                                    </c:choose>
+                                </div>
+                                <div style="flex:1;">
+                                    <div class="order-item-name">${item.product.name}</div>
+                                    <div class="order-item-detail">Qty: ${item.quantity} × Rs ${item.product.price}</div>
+                                </div>
+                                <div style="font-weight:700;color:#ff6b00;">Rs ${item.lineTotal}</div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                    <div class="order-card-footer">
+                        <div class="order-addr">📍 ${o.deliveryAddress}</div>
+                        <div class="order-total">Total: Rs ${o.totalPrice}</div>
+                    </div>
+                </div>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
+</div>
+</body>
+</html>
