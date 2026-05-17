@@ -157,3 +157,27 @@
             grid-column: 1/-1; text-align: center;
             padding: 60px 20px; background: #fff;
             border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.08);
+        }
+        .empty-state .e-icon { font-size: 4rem; margin-bottom: 16px; }
+        .empty-state h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 8px; }
+        .empty-state p { color: #64748b; margin-bottom: 20px; }
+
+        /* Alerts */
+        .alert { padding: 12px 18px; border-radius: 8px; margin-bottom: 16px; font-size: .95rem; }
+        .alert-success { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+        .alert-error   { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+
+        @media (max-width: 768px) {
+            .shop-nav { padding: 0 16px; }
+            .shop-nav .nav-search { display: none; }
+            .shop-layout { padding: 16px; }
+            .prod-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+            .prod-img-wrap { height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navbar -->
+<nav class="shop-nav">
+    <a class="logo" href="${pageContext.request.contextPath}/customer/products">Shop<span>Nepal</span></a>
