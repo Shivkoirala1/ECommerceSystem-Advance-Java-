@@ -1,62 +1,107 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html><html><head><title>Shop - ECommerce</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-</head><body>
-<nav class="navbar">
-    <a class="brand" href="#">E<span>Commerce</span></a>
-    <ul class="nav-links">
-        <li><a href="${pageContext.request.contextPath}/customer/products">🏠 Shop</a></li>
-        <li><a href="${pageContext.request.contextPath}/cart">🛒 Cart</a></li>
-        <li><a href="${pageContext.request.contextPath}/order/history">📦 My Orders</a></li>
-        <li><span style="color:#94a3b8;">Hi, ${sessionScope.user.fullName}</span></li>
-        <li><a href="${pageContext.request.contextPath}/logout" class="btn-logout">Logout</a></li>
-    </ul>
-</nav>
-<div class="main-content" style="padding:28px 32px;">
-    <h2 style="margin-bottom:20px;">Browse Products</h2>
-    <c:if test="${not empty param.success}"><div class="alert alert-success">${param.success}</div></c:if>
-    <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shop - ShopNepal</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <style>
+        body { background: #f5f5f5; margin: 0; }
 
-    <!-- Search Bar -->
-    <form method="get" action="${pageContext.request.contextPath}/customer/products" class="search-bar">
-        <input type="text" name="search" placeholder="Search products by name or category..." value="${search}">
-        <button type="submit" class="btn btn-primary">Search</button>
-        <a href="${pageContext.request.contextPath}/customer/products" class="btn btn-secondary">Clear</a>
-    </form>
+        /* Top navbar */
+        .shop-nav {
+            background: #ff6b00; padding: 0 32px;
+            display: flex; align-items: center;
+            justify-content: space-between; height: 64px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.15);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .shop-nav .logo {
+            color: #fff; font-size: 1.5rem;
+            font-weight: 900; text-decoration: none;
+        }
+        .shop-nav .logo span { color: #ffe066; }
+        .shop-nav .nav-search {
+            flex: 1; max-width: 500px; margin: 0 24px;
+            display: flex;
+        }
+        .shop-nav .nav-search input {
+            flex: 1; padding: 9px 16px;
+            border: none; border-radius: 4px 0 0 4px;
+            font-size: .95rem; outline: none;
+        }
+        .shop-nav .nav-search button {
+            background: #1e293b; color: #fff;
+            border: none; padding: 0 18px;
+            border-radius: 0 4px 4px 0;
+            font-size: 1rem; cursor: pointer;
+        }
+        .shop-nav .nav-right {
+            display: flex; align-items: center; gap: 8px;
+        }
+        .shop-nav .nav-right a {
+            color: #fff; text-decoration: none;
+            padding: 7px 14px; border-radius: 4px;
+            font-size: .9rem; font-weight: 600;
+            transition: background .2s;
+        }
+        .shop-nav .nav-right a:hover { background: rgba(255,255,255,.2); }
+        .shop-nav .nav-right .cart-btn {
+            background: #fff; color: #ff6b00;
+            border-radius: 4px; padding: 7px 14px;
+            font-weight: 700;
+        }
+        .shop-nav .nav-right .user-greet {
+            color: #ffe8cc; font-size: .88rem;
+        }
 
-    <!-- Product Grid -->
-    <div class="product-grid">
-        <c:forEach var="p" items="${products}">
-            <div class="product-card">
-                <div class="p-cat">${p.category}</div>
-                <div class="p-name">${p.name}</div>
-                <div style="color:#64748b;font-size:.88rem;">${p.description}</div>
-                <div class="p-price">Rs ${p.price}</div>
-                <div class="p-stock">Stock: ${p.stock}</div>
-                <div class="p-actions">
-                    <c:choose>
-                        <c:when test="${p.stock > 0}">
-                            <form method="post" action="${pageContext.request.contextPath}/cart" style="display:flex;gap:6px;align-items:center;flex:1;">
-                                <input type="hidden" name="action" value="add">
-                                <input type="hidden" name="productId" value="${p.id}">
-                                <input type="number" name="quantity" value="1" min="1" max="${p.stock}"
-                                       style="width:60px;padding:6px;border:1px solid #e2e8f0;border-radius:6px;">
-                                <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                            </form>
-                        </c:when>
-                        <c:otherwise>
-                            <span style="color:#ef4444;font-weight:600;">Out of Stock</span>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </div>
-        </c:forEach>
-        <c:if test="${empty products}">
-            <div class="card" style="width:100%;text-align:center;color:#64748b;">
-                No products found. <a href="${pageContext.request.contextPath}/customer/products">View all products</a>
-            </div>
-        </c:if>
-    </div>
-</div>
-</body></html>
+        /* Category filter bar */
+        .cat-bar {
+            background: #fff; padding: 12px 32px;
+            display: flex; gap: 10px; flex-wrap: wrap;
+            align-items: center; border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 1px 4px rgba(0,0,0,.04);
+        }
+        .cat-bar span { font-weight: 700; color: #1e293b; margin-right: 4px; }
+        .cat-btn {
+            padding: 6px 16px; border-radius: 20px;
+            border: 1.5px solid #e2e8f0; background: #f8fafc;
+            color: #475569; font-size: .88rem; font-weight: 600;
+            text-decoration: none; transition: all .2s;
+        }
+        .cat-btn:hover, .cat-btn.active {
+            background: #ff6b00; color: #fff;
+            border-color: #ff6b00;
+        }
+
+        /* Main layout */
+        .shop-layout {
+            display: flex; max-width: 1400px;
+            margin: 0 auto; padding: 24px 32px; gap: 24px;
+        }
+
+        /* Products area */
+        .products-area { flex: 1; }
+        .products-header {
+            display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 20px;
+        }
+        .products-header h2 { font-size: 1.2rem; font-weight: 800; color: #1e293b; }
+        .result-count { color: #64748b; font-size: .9rem; }
+
+        /* Product grid */
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .prod-card {
+            background: #fff; border-radius: 12px;
+            box-shadow: 0 1px 6px rgba(0,0,0,.08);
+            overflow: hidden; transition: transform .2s, box-shadow .2s;
+            display: flex; flex-direction: column;
+        }
+        .prod-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,.12);
+        }
