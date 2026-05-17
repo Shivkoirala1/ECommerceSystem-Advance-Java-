@@ -330,3 +330,103 @@
                  style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
             <div class="cat-name">Electronics</div>
         </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/clothes.jpg"
+                 alt="Clothes"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Clothes</div>
+        </a>
+
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/footwear.JPEG"
+                 alt="Footwear"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Footwear</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/acessories.jpg"
+                 alt="Acessories"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Acccessoris</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/furniture.jpeg"
+                 alt="Home and Living"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Home Home and Living</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/phone.jpg"
+                 alt="Phone"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Phone</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/childwear.jpg"
+                 alt="Child Wear"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Child wear</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/ladieswear.jpeg"
+                 alt="Ladies Wear"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Ladies Wear</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/menwear.JPEG"
+                 alt="Men Wear"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Men Wear</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/facial.jpg"
+                 alt="Facial Products"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Facial Products</div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/food.jpg"
+                 alt="Foods"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Foods</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- Flash Sale -->
+<div class="section" style="background:#fff;margin:0;">
+    <div class="flash-header">
+        <div class="flash-title">
+            ⚡ Flash Sale
+            <span class="flash-badge">NOW ON</span>
+        </div>
+        <a href="${pageContext.request.contextPath}/login" class="view-all">View All Products →</a>
+    </div>
+    <div class="prod-grid">
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/laptop.jpg"
+                 alt="Laptop"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">HP Victus</div>
+            <div class="prod-price">Rs 95,000</div>
+            <div class="prod-old">Rs 105,000</div>
+            <span class="prod-discount">-12% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/redmi14.jpg"
+                 alt="Redmi 14 pro"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Redmi 14 Pro</div>
+            <div class="prod-price">Rs 38,000</div>
+            <div class="prod-old">Rs 45,000</div>
+            <span class="prod-discount">-16% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/earpods.jpg"
+                 alt="Headphones"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">earpods pro</div>
+            <div class="prod-price">Rs 28,800</div>
+            <div class="prod-old">Rs 35,500</div>
