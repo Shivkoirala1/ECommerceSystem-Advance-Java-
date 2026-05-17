@@ -162,3 +162,93 @@
         <div class="mission-card">
             <div class="m-icon">👁</div>
             <h3>Our Vision</h3>
+            <p>To become Nepal's most trusted and loved e-commerce platform serving millions of customers.</p>
+        </div>
+        <div class="mission-card">
+            <div class="m-icon">💎</div>
+            <h3>Our Values</h3>
+            <p>Trust, transparency, and customer satisfaction are at the core of everything we do.</p>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-box"><div class="num">10K+</div><div class="lbl">Happy Customers</div></div>
+        <div class="stat-box"><div class="num">500+</div><div class="lbl">Products</div></div>
+        <div class="stat-box"><div class="num">77</div><div class="lbl">Districts Served</div></div>
+        <div class="stat-box"><div class="num">24/7</div><div class="lbl">Customer Support</div></div>
+    </div>
+
+    <!-- Story -->
+    <div class="story">
+        <h2>Our Story</h2>
+        <p>ShopNepal was founded by a group of passionate computer science students from Itahari International College, London Metropolitan University. We noticed that people in Nepal, especially outside of Kathmandu, had limited access to quality products at fair prices.</p>
+        <p>We built this platform as part of our Advanced Programming coursework (CS5054NT) to solve a real-world problem — making online shopping simple, safe, and accessible for everyone in Nepal.</p>
+        <p>Our system features a full e-commerce experience including product browsing, shopping cart, secure checkout, and an admin dashboard for store management — all built using Java, JSP, and MySQL.</p>
+    </div>
+
+    <!-- Team -->
+    <h2 style="font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;">Meet Our Team</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="${pageContext.request.contextPath}/images/damaru.jpeg"
+                 alt="Damaru"
+                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+            <h4>Damaru Ballav Koirala</h4>
+            <p>Team Leader & Backend Developer</p>
+        </div>
+        <div class="team-card">
+            <img src="${pageContext.request.contextPath}/images/akash.jpeg"
+                 alt="Akash"
+                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+            <h4>Akash Dhimal</h4>
+            <p>Database & DAO Developer</p>
+        </div>
+        <div class="team-card">
+            <img src="${pageContext.request.contextPath}/images/bickey.jpeg"
+                 alt="Bickey"
+                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+            <h4>Bickey Rai</h4>
+            <p>UI/UX & Frontend Developer</p>
+        </div>
+        <div class="team-card">
+            <img src="${pageContext.request.contextPath}/images/prayash.jpeg"
+                 alt="Prayash"
+                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+            <h4>Prayash Bhattarai</h4>
+            <p>Models & Services Developer</p>
+        </div>
+        <div class="team-card">
+            <img src="${pageContext.request.contextPath}/images/ishwor.jpeg"
+                 alt="Ishwor"
+                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+            <h4>Ishwor</h4>
+            <p>Testing & Documentation</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+        <h2>Ready to Shop with Us?</h2>
+        <p>Join thousands of happy customers and start shopping today</p>
+        <div class="cta-btns">
+            <a href="${pageContext.request.contextPath}/register" class="cta-primary">Create Account</a>
+            <a href="${pageContext.request.contextPath}/login" class="cta-secondary">Login</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="land-footer">
+    <strong style="color:#fff;">ShopNepal</strong> — Advanced Programming Coursework CS5054NT
+    <div class="footer-links">
+        <a href="${pageContext.request.contextPath}/">Home</a>
+        <a href="${pageContext.request.contextPath}/about">About Us</a>
+        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="${pageContext.request.contextPath}/register">Sign Up</a>
+    </div>
+</div>
+
+</body>
+</html>
