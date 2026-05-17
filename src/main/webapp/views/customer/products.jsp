@@ -181,3 +181,41 @@
 <!-- Top Navbar -->
 <nav class="shop-nav">
     <a class="logo" href="${pageContext.request.contextPath}/customer/products">Shop<span>Nepal</span></a>
+
+    <form class="nav-search" method="get" action="${pageContext.request.contextPath}/customer/products">
+        <input type="text" name="search" placeholder="Search products..." value="${search}">
+        <button type="submit">🔍</button>
+    </form>
+
+    <div class="nav-right">
+        <span class="user-greet">Hi, ${sessionScope.user.fullName}</span>
+        <a href="${pageContext.request.contextPath}/customer/products">🏠 Shop</a>
+        <a href="${pageContext.request.contextPath}/order/history">📦 Orders</a>
+        <a href="${pageContext.request.contextPath}/cart" class="cart-btn">🛒 Cart</a>
+        <a href="${pageContext.request.contextPath}/logout">Logout</a>
+    </div>
+</nav>
+
+<!-- Category Filter Bar -->
+<div class="cat-bar">
+    <span>Categories:</span>
+    <a href="${pageContext.request.contextPath}/customer/products"
+       class="cat-btn ${empty param.category && empty param.search ? 'active' : ''}">All</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Electronics"
+       class="cat-btn ${param.category == 'Electronics' ? 'active' : ''}">💻 Electronics</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Phone"
+       class="cat-btn ${param.category == 'Phone' ? 'active' : ''}">📱 Phones</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Clothing"
+       class="cat-btn ${param.category == 'Clothing' ? 'active' : ''}">👕 Clothing</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Footwear"
+       class="cat-btn ${param.category == 'Footwear' ? 'active' : ''}">👟 Footwear</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Accessories"
+       class="cat-btn ${param.category == 'Accessories' ? 'active' : ''}">🎒 Accessories</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Home and Living"
+       class="cat-btn ${param.category == 'Home and Living' ? 'active' : ''}">🏠 Home & Living</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Facial Products"
+       class="cat-btn ${param.category == 'Facial Products' ? 'active' : ''}">✨ Facial</a>
+    <a href="${pageContext.request.contextPath}/customer/products?category=Foods"
+       class="cat-btn ${param.category == 'Foods' ? 'active' : ''}">🍫 Foods</a>
+</div>
+
