@@ -484,3 +484,58 @@
             <div class="prod-name">Gun</div>
             <div class="prod-price">Rs 1,000</div>
             <div class="prod-old">Rs 1,500</div>
+            <span class="prod-discount">-28% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/pedigree.jpg"
+                 alt="Pedigree"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Pedigree</div>
+            <div class="prod-price">Rs 800</div>
+            <div class="prod-old">Rs 1,200</div>
+            <span class="prod-discount">-38% OFF</span>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" class="prod-card">
+            <img src="${pageContext.request.contextPath}/images/washingmachine.jpg"
+                 alt="Washing Machine"
+                 style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:10px;padding:6px;">
+            <div class="prod-name">Washing Machine</div>
+            <div class="prod-price">Rs 188,800</div>
+            <div class="prod-old">Rs 200,500</div>
+            <span class="prod-discount">-18% OFF</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- CTA Banner -->
+<div style="background:linear-gradient(135deg,#ff6b00,#1e293b);padding:48px 40px;text-align:center;color:#fff;">
+    <h2 style="font-size:2rem;font-weight:900;margin-bottom:10px;">Ready to Start Shopping?</h2>
+    <p style="font-size:1.05rem;opacity:.9;margin-bottom:24px;">Join thousands of happy customers across Nepal</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="${pageContext.request.contextPath}/register"
+           style="background:#fff;color:#ff6b00;padding:13px 32px;border-radius:6px;font-weight:800;text-decoration:none;font-size:1rem;">
+            Create Free Account
+        </a>
+        <a href="${pageContext.request.contextPath}/login"
+           style="background:transparent;color:#fff;padding:13px 32px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid #fff;">
+            Login
+        </a>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="land-footer">
+    <h3>ShopNepal</h3>
+    <p>Your trusted online shopping destination in Nepal</p>
+    <div class="footer-links">
+        <a href="${pageContext.request.contextPath}/">Home</a>
+        <a href="${pageContext.request.contextPath}/about">About Us</a>
+        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="${pageContext.request.contextPath}/register">Sign Up</a>
+    </div>
+    <p style="margin-top:20px;font-size:.8rem;">© 2026 ShopNepal. Advanced Programming Coursework.</p>
+</div>
+
+</body>
+</html>
