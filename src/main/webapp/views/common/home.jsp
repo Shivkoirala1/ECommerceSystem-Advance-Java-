@@ -182,3 +182,75 @@
         }
         .prod-card .prod-price {
             color: #ff6b00; font-weight: 800;
+            font-size: 1rem;
+        }
+        .prod-card .prod-old {
+            color: #94a3b8; text-decoration: line-through;
+            font-size: .82rem;
+        }
+        .prod-card .prod-discount {
+            background: #fef2f2; color: #ef4444;
+            font-size: .75rem; font-weight: 700;
+            padding: 2px 7px; border-radius: 4px;
+            display: inline-block; margin-top: 4px;
+        }
+
+        /* Features strip */
+        .features {
+            background: #fff; padding: 28px 40px;
+            display: flex; gap: 0; border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .feature-item {
+            flex: 1; display: flex; align-items: center;
+            gap: 14px; padding: 0 20px;
+            border-right: 1px solid #e2e8f0;
+        }
+        .feature-item:last-child { border-right: none; }
+        .feature-icon { font-size: 2rem; }
+        .feature-text h4 { font-size: .95rem; font-weight: 700; }
+        .feature-text p { font-size: .82rem; color: #64748b; }
+
+        /* Footer */
+        .land-footer {
+            background: #1e293b; color: #94a3b8;
+            padding: 40px; text-align: center;
+        }
+        .land-footer h3 {
+            color: #fff; font-size: 1.3rem; margin-bottom: 8px;
+        }
+        .land-footer p { font-size: .9rem; margin-bottom: 16px; }
+        .footer-links {
+            display: flex; justify-content: center;
+            gap: 24px; flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #94a3b8; text-decoration: none; font-size: .9rem;
+        }
+        .footer-links a:hover { color: #fff; }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .land-nav { padding: 0 16px; }
+            .search-wrap { display: none; }
+            .hero { padding: 36px 20px; flex-direction: column; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-badge { display: none; }
+            .section { padding: 24px 16px; }
+            .features { flex-direction: column; gap: 16px; }
+            .feature-item { border-right: none; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <a href="${pageContext.request.contextPath}/about">About Us</a>
+    <span>|</span>
+    <a href="${pageContext.request.contextPath}/login">Seller Center</a>
+    <span>|</span>
+    <a href="${pageContext.request.contextPath}/about">Help & Support</a>
+</div>
+
+<!-- Main Navbar -->
