@@ -244,3 +244,23 @@
         </div>
 
         <!-- Product Grid -->
+        <div class="prod-grid">
+            <c:forEach var="p" items="${products}">
+                <div class="prod-card">
+                    <div class="prod-img-wrap">
+                        <c:choose>
+                            <c:when test="${not empty p.imageUrl}">
+                                <img src="${pageContext.request.contextPath}/${p.imageUrl}"
+                                     alt="${p.name}"
+                                     onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                                <span class="prod-emoji" style="display:none;">${p.categoryEmoji}</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span class="prod-emoji">${p.categoryEmoji}</span>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+
+                    <div class="prod-info">
+                        <div class="prod-cat">${p.category}</div>
+                        <div class="prod-name">${p.name}</div>
