@@ -9,6 +9,7 @@ public class Product {
     private BigDecimal price;
     private int stock;
     private String category;
+    private String imageUrl;
 
     public Product() {}
 
@@ -24,4 +25,19 @@ public class Product {
     public void setStock(int stock)            { this.stock = stock; }
     public String getCategory()                { return category; }
     public void setCategory(String category)   { this.category = category; }
+    public String getImageUrl()                { return imageUrl; }
+    public void setImageUrl(String imageUrl)   { this.imageUrl = imageUrl; }
+
+    // Returns emoji based on category if no image set
+    public String getCategoryEmoji() {
+        if (category == null) return "📦";
+        switch (category.toLowerCase()) {
+            case "electronics": return "💻";
+            case "clothing":    return "👕";
+            case "footwear":    return "👟";
+            case "accessories": return "🎒";
+            case "mobiles":     return "📱";
+            default:            return "📦";
+        }
+    }
 }
