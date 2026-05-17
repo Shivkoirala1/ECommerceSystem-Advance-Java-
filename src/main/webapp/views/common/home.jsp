@@ -254,3 +254,79 @@
 </div>
 
 <!-- Main Navbar -->
+<nav class="land-nav">
+    <a class="logo" href="${pageContext.request.contextPath}/">Shop<span>Nepal</span></a>
+
+    <div class="search-wrap">
+        <input type="text" placeholder="Search products, brands and more...">
+        <button>🔍</button>
+    </div>
+
+    <div class="nav-right">
+        <a href="${pageContext.request.contextPath}/about">About Us</a>
+        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="${pageContext.request.contextPath}/register" class="btn-signup">Sign Up</a>
+        <a href="${pageContext.request.contextPath}/login" class="cart-icon">🛒</a>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Shop Smarter,<br><span>Save Bigger</span></h1>
+        <p>Discover thousands of products at unbeatable prices. Fast delivery across Nepal.</p>
+        <div class="hero-btns">
+            <a href="${pageContext.request.contextPath}/register" class="btn-hero-primary">Start Shopping</a>
+            <a href="${pageContext.request.contextPath}/login" class="btn-hero-secondary">Login to Account</a>
+        </div>
+    </div>
+    <div class="hero-badge">
+        <div class="big">80%</div>
+        <div>OFF</div>
+        <div style="font-size:.75rem;margin-top:4px;">Limited Time</div>
+    </div>
+</div>
+
+<!-- Features Strip -->
+<div class="features">
+    <div class="feature-item">
+        <div class="feature-icon">🚚</div>
+        <div class="feature-text">
+            <h4>Free Delivery</h4>
+            <p>On orders above Rs 500</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-text">
+            <h4>Secure Payment</h4>
+            <p>100% secure transactions</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon">↩️</div>
+        <div class="feature-text">
+            <h4>Easy Returns</h4>
+            <p>7 day return policy</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon">🎧</div>
+        <div class="feature-text">
+            <h4>24/7 Support</h4>
+            <p>Always here to help</p>
+        </div>
+    </div>
+</div>
+
+<!-- Categories -->
+<div class="section">
+    <div class="section-title">Shop by Category</div>
+
+    <div class="cat-grid">
+        <a href="${pageContext.request.contextPath}/login" class="cat-card">
+            <img src="${pageContext.request.contextPath}/images/electronics.jpeg"
+                 alt="Electronics"
+                 style="width:100%;height:100px;object-fit:contain;padding:8px;display:block;">
+            <div class="cat-name">Electronics</div>
+        </a>
