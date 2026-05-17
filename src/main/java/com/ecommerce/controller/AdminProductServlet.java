@@ -34,7 +34,6 @@ public class AdminProductServlet extends HttpServlet {
             throws ServletException, IOException {
         String action = req.getParameter("action");
         if (action == null) action = "";
-
         try {
             if (action.equals("add")) {
                 addProduct(req, resp);
@@ -63,22 +62,23 @@ public class AdminProductServlet extends HttpServlet {
         String priceStr = req.getParameter("price");
         String stockStr = req.getParameter("stock");
         String category = req.getParameter("category");
+        String imageUrl = req.getParameter("imageUrl");
 
         if (name == null || name.trim().isEmpty() ||
                 priceStr == null || stockStr == null ||
                 category == null || category.trim().isEmpty()) {
-            req.setAttribute("error", "All fields are required.");
+            req.setAttribute("error", "Name, price, stock and category are required.");
             req.setAttribute("products", productDAO.findAll());
             req.getRequestDispatcher("/views/admin/products.jsp").forward(req, resp);
             return;
         }
-
         Product p = new Product();
         p.setName(name.trim());
         p.setDescription(desc == null ? "" : desc.trim());
         p.setPrice(new BigDecimal(priceStr.trim()));
         p.setStock(Integer.parseInt(stockStr.trim()));
         p.setCategory(category.trim());
+        p.setImageUrl(imageUrl == null || imageUrl.trim().isEmpty() ? null : imageUrl.trim());
         productDAO.add(p);
         resp.sendRedirect(req.getContextPath() + "/admin/products?success=Product+added+successfully");
     }
@@ -86,13 +86,15 @@ public class AdminProductServlet extends HttpServlet {
     private void updateProduct(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, IOException {
         long id = Long.parseLong(req.getParameter("id"));
+        String imageUrl = req.getParameter("imageUrl");
         Product p = new Product();
         p.setId(id);
         p.setName(req.getParameter("name").trim());
-        p.setDescription(req.getParameter("description").trim());
+        p.setDescription(req.getParameter("description") == null ? "" : req.getParameter("description").trim());
         p.setPrice(new BigDecimal(req.getParameter("price").trim()));
         p.setStock(Integer.parseInt(req.getParameter("stock").trim()));
         p.setCategory(req.getParameter("category").trim());
+        p.setImageUrl(imageUrl == null || imageUrl.trim().isEmpty() ? null : imageUrl.trim());
         productDAO.update(p);
         resp.sendRedirect(req.getContextPath() + "/admin/products?success=Product+updated+successfully");
     }
