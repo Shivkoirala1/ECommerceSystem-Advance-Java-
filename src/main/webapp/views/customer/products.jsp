@@ -105,3 +105,55 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,.12);
         }
+        .prod-img-wrap {
+            height: 180px; background: #f8fafc;
+            display: flex; align-items: center;
+            justify-content: center; overflow: hidden;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .prod-img-wrap img {
+            width: 100%; height: 100%;
+            object-fit: contain; padding: 12px;
+        }
+        .prod-img-wrap .prod-emoji {
+            font-size: 5rem; line-height: 1;
+        }
+        .prod-info { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .prod-cat {
+            font-size: .75rem; font-weight: 700;
+            color: #ff6b00; text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .prod-name { font-size: .98rem; font-weight: 700; color: #1e293b; }
+        .prod-desc { font-size: .82rem; color: #64748b; line-height: 1.4; flex: 1; }
+        .prod-price { font-size: 1.15rem; font-weight: 800; color: #ff6b00; }
+        .prod-stock-ok  { font-size: .78rem; color: #22c55e; font-weight: 600; }
+        .prod-stock-low { font-size: .78rem; color: #f59e0b; font-weight: 600; }
+        .prod-stock-out { font-size: .78rem; color: #ef4444; font-weight: 600; }
+        .prod-footer {
+            padding: 12px 14px; border-top: 1px solid #f1f5f9;
+            display: flex; gap: 8px; align-items: center;
+        }
+        .qty-input {
+            width: 56px; padding: 7px 8px;
+            border: 1.5px solid #e2e8f0; border-radius: 6px;
+            font-size: .9rem; text-align: center;
+        }
+        .btn-add {
+            flex: 1; background: #ff6b00; color: #fff;
+            border: none; border-radius: 6px; padding: 8px;
+            font-size: .9rem; font-weight: 700; cursor: pointer;
+            transition: background .2s;
+        }
+        .btn-add:hover { background: #e05a00; }
+        .btn-out {
+            flex: 1; background: #f1f5f9; color: #94a3b8;
+            border: none; border-radius: 6px; padding: 8px;
+            font-size: .9rem; font-weight: 700; cursor: not-allowed;
+        }
+
+        /* Empty state */
+        .empty-state {
+            grid-column: 1/-1; text-align: center;
+            padding: 60px 20px; background: #fff;
+            border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.08);
