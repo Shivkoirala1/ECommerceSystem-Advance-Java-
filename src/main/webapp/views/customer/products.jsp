@@ -264,3 +264,55 @@
                     <div class="prod-info">
                         <div class="prod-cat">${p.category}</div>
                         <div class="prod-name">${p.name}</div>
+                        <div class="prod-desc">${p.description}</div>
+                        <div class="prod-price">Rs ${p.price}</div>
+                        <c:choose>
+                            <c:when test="${p.stock == 0}">
+                                <span class="prod-stock-out">❌ Out of Stock</span>
+                            </c:when>
+                            <c:when test="${p.stock <= 5}">
+                                <span class="prod-stock-low">⚠️ Only ${p.stock} left!</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span class="prod-stock-ok">✅ In Stock (${p.stock})</span>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+
+                    <div class="prod-footer">
+                        <c:choose>
+                            <c:when test="${p.stock > 0}">
+                                <form method="post" action="${pageContext.request.contextPath}/cart"
+                                      style="display:flex;gap:8px;width:100%;align-items:center;">
+                                    <input type="hidden" name="action" value="add">
+                                    <input type="hidden" name="productId" value="${p.id}">
+                                    <input type="number" name="quantity" value="1"
+                                           min="1" max="${p.stock}" class="qty-input">
+                                    <button type="submit" class="btn-add">Add to Cart 🛒</button>
+                                </form>
+                            </c:when>
+                            <c:otherwise>
+                                <button class="btn-out" disabled>Out of Stock</button>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </div>
+            </c:forEach>
+
+            <c:if test="${empty products}">
+                <div class="empty-state">
+                    <div class="e-icon">🔍</div>
+                    <h3>No products found</h3>
+                    <p>Try searching with different keywords or browse all categories.</p>
+                    <a href="${pageContext.request.contextPath}/customer/products"
+                       style="background:#ff6b00;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;">
+                        View All Products
+                    </a>
+                </div>
+            </c:if>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
