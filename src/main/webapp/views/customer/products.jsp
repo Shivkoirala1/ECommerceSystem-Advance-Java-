@@ -219,3 +219,28 @@
        class="cat-btn ${param.category == 'Foods' ? 'active' : ''}">🍫 Foods</a>
 </div>
 
+<!-- Main Content -->
+<div class="shop-layout">
+    <div class="products-area">
+
+        <c:if test="${not empty param.success}">
+            <div class="alert alert-success">✅ ${param.success}</div>
+        </c:if>
+        <c:if test="${not empty error}">
+            <div class="alert alert-error">❌ ${error}</div>
+        </c:if>
+
+        <!-- Header -->
+        <div class="products-header">
+            <h2>
+                <c:choose>
+                    <c:when test="${not empty search}">Results for "${search}"</c:when>
+                    <c:when test="${param.category == 'Clothing'}">👕 Clothing (Men, Women & Kids)</c:when>
+                    <c:when test="${not empty param.category}">${param.category}</c:when>
+                    <c:otherwise>All Products</c:otherwise>
+                </c:choose>
+            </h2>
+            <span class="result-count">${products.size()} products found</span>
+        </div>
+
+        <!-- Product Grid -->
