@@ -192,8 +192,8 @@
     <div class="team-grid">
         <div class="team-card">
             <img src="${pageContext.request.contextPath}/images/damaru.jpeg"
-                 alt="Damaru"
-                 style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
+                  alt="Damaru"
+                  style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
             <h4>Damaru Ballav Koirala</h4>
             <p>Team Leader & Backend Developer</p>
         </div>
@@ -212,18 +212,18 @@
             <p>UI/UX & Frontend Developer</p>
         </div>
         <div class="team-card">
-            <img src="${pageContext.request.contextPath}/images/prayash.jpeg"
-                 alt="Prayash"
+            <img src="${pageContext.request.contextPath}/images/ishwor.jpeg"
+                 alt="Ishwor Kumar Shrestha"
                  style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
-            <h4>Prayash Bhattarai</h4>
+            <h4>Ishwor Kumar Shrestha</h4>
             <p>Models & Services Developer</p>
         </div>
         <div class="team-card">
-            <img src="${pageContext.request.contextPath}/images/ishwor.jpeg"
-                 alt="Ishwor"
+            <img src="${pageContext.request.contextPath}/images/prayash.jpeg"
+                 alt="Prayash Bhattarai"
                  style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #ff6b00;">
-            <h4>Ishwor</h4>
-            <p>Testing & Documentation</p>
+            <h4>Prayash Bhattarai</h4>
+            <p>QA tester</p>
         </div>
     </div>
 
