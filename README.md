@@ -25,4 +25,3 @@ A full-featured desktop e-commerce application built entirely in Java as part of
 - **Testing:** JUnit 5
 - **Version Control:** Git & GitHub
 
-## 📁 Project Structure
